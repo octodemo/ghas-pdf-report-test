@@ -55,5 +55,17 @@ jobs:
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
 
-
+    - name: Generate Security Report
+      uses: peter-murray/github-security-report-action@v2
+      with:
+        token: ${{ secrets.SECURITY_TOKEN }}
+        sarifReportDir: ../results
+        outputDir: ${{ github.workspace }}/results
+        repository: ${{ github.repository }}
+   
+    - name: Upload PDF as Workflow artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: security-report
+        path: ${{ github.workspace }}/results/*.pdf
 
