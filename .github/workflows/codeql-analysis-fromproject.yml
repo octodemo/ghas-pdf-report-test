@@ -54,6 +54,10 @@ jobs:
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
+      
+    - name: Get sarif
+      run: |
+        cp ../results/*.sarif ${{ github.workspace }}/results
 
     - name: Generate Security Report
       uses: peter-murray/github-security-report-action@sarif-extension-support
