@@ -69,3 +69,8 @@ jobs:
         name: security-report
         path: ${{ github.workspace }}/results/*.pdf
 
+    - name: Upload SARIF as Workflow artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: sarif-files
+        path: ${{ github.workspace }}/results/*.sarif
