@@ -59,7 +59,7 @@ jobs:
       uses: peter-murray/github-security-report-action@sarif-extension-support
       with:
         token: ${{ secrets.SECURITY_TOKEN }}
-        sarifReportDir: ../results
+        sarifReportDir: ${{ github.workspace }}/results
         outputDir: ${{ github.workspace }}/results
         repository: ${{ github.repository }}
    
