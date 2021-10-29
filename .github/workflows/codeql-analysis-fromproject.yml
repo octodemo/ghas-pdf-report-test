@@ -58,7 +58,7 @@ jobs:
     - name: Generate Security Report
       uses: peter-murray/github-security-report-action@sarif-extension-support
       with:
-        token: ${{ secrets.SECURITY_TOKEN }}
+        token: ${{ secrets.ALL_REPOSITORIES_SECRET }}
         sarifReportDir: ../results
         outputDir: ${{ github.workspace }}/results
         repository: ${{ github.repository }}
